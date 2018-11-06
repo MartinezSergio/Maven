@@ -15,7 +15,7 @@ public class Demo1 {
 	public static void main(String[] args) {
 		
 		String cadena1 = "Hola, soy....";
-		String cadena2 = "José Julián";
+		String cadena2 = "José Juli�n";
 		
 		System.out.println(cadena1 + " " +  cadena2);
 		

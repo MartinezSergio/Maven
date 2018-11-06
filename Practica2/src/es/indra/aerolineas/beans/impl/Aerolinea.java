@@ -1,19 +1,21 @@
 /**
  * 
  */
-package es.indra.aerolineas;
+package es.indra.aerolineas.beans.impl;
+
+import es.indra.aerolineas.beans.IAerolinea;
 
 /**
  * @author josejarizav
  *
  *
  */
-public class Aerolinea {
+public class Aerolinea implements IAerolinea{
 	
-	int id;
-	String nombre;
-	Vuelo[] vuelos = new Vuelo[10];
-	
+	private int id;
+	private String nombre;
+	private Vuelo[] vuelos = new Vuelo[10];
+		
 	public Aerolinea() {		
 	}
 
@@ -28,6 +30,47 @@ public class Aerolinea {
 		this.nombre = nombre;
 		this.vuelos = vuelos;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
+
+	@Override
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	@Override
+	public Vuelo[] getVuelos() {
+		return vuelos;
+	}
+
+	@Override
+	public void setVuelos(Vuelo[] vuelos) {
+		this.vuelos = vuelos;
+	}
+
+	public void consultarVuelos(String origen) {
+		System.out.println("Metodo de 1 parametro: ".concat(origen));
+	}
+	public void consultarVuelos(String origen, String destino) {
+		System.out.println("El origen del vuelo es: " + origen + 
+				"\nEl destino del vuelo es: " + destino);
+	}
+	
+	public void anularVuelos(String... vuelos) {
+		System.out.println("Númerod de vuelos a anular: " + vuelos.length);
+	}
+	
 
 	
 	
