@@ -3,7 +3,11 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+import java.io.IOException;
+import java.util.List;
+
 import es.indra.aerolineas.beans.IAerolinea;
+import es.indra.aerolineas.services.ReadFile;
 
 /**
  * @author josejarizav
@@ -59,8 +63,17 @@ public class Aerolinea implements IAerolinea{
 		this.vuelos = vuelos;
 	}
 
-	public void consultarVuelos(String origen) {
-		System.out.println("Metodo de 1 parametro: ".concat(origen));
+	
+	public void consultarVuelos(String origen) throws IOException {
+		//System.out.println("Metodo de 1 parametro: ".concat(origen));
+		ReadFile r = new ReadFile();
+		List<String> vuelosEncontrados = r.retornarVuelosPropagandoError();
+		
+		for(String vuelo : vuelosEncontrados) {
+			System.out.println(vuelo);
+		}
+		//r.retornarVuelos();
+		
 	}
 	public void consultarVuelos(String origen, String destino) {
 		System.out.println("El origen del vuelo es: " + origen + 
