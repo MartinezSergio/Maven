@@ -1,17 +1,4 @@
 # practicas-curso-java
-## Clases
-1. Aerolinea.
-2. Empleado.
-3. Pasajero.
-4. Persona.
-5. Vuelo.
-6. Venta
-7. ReadFile
-
-## Interfaz
-- IAerolinea.
-
-
 
 Proyecto que busca representar una aerolinea.
 
