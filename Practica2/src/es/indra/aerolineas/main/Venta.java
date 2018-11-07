@@ -73,12 +73,29 @@ public class Venta{
 		
 		System.out.println("*************************************************************************");
 		
+		Pasajero p1 = new Pasajero();
+		p1.setId(11);
+		p1.setNombre("Sergio");
+		p1.setApellidos("Martinez Maganto");
+		p1.setVuelos(vuelosPasajero);
+		
+		Pasajero p2 = new Pasajero();
+		p2.setId(12);
+		p2.setNombre("Alfonso");
+		p2.setApellidos("Gonzalez Rodriguez");
+		p2.setVuelos(vuelosPasajero);
+		
+		Pasajero p3 = new Pasajero();
+		p3.setId(13);
+		p3.setNombre("ALfredo");
+		p3.setApellidos("Sanchez Perez");
+		p3.setVuelos(vuelosPasajero);
 		
 		Billete b1 = new Billete(10, vuelos[1], p, "07/11/2018", "18A");
-		Billete b2 = new Billete(11, vuelos[1], p, "08/11/2018", "22B");
-		Billete b3 = new Billete(12, vuelos[2], p, "07/11/2018", "30A");
-		Billete b4 = new Billete(13, vuelos[2], p, "09/11/2018", "48B");
-		Billete b5 = new Billete(14, vuelos[2], p, "07/11/2018", "59A");
+		Billete b2 = new Billete(11, vuelos[2], p1, "08/11/2018", "22B");
+		Billete b3 = new Billete(12, vuelos[3], p2, "07/11/2018", "30A");
+		Billete b4 = new Billete(13, vuelos[4], p3, "09/11/2018", "48B");
+		Billete b5 = new Billete(14, vuelos[5], p, "07/11/2018", "59A");
 		System.out.println(b5.toString());
 		try {
 			aa.consultarVuelos("MAD");
@@ -89,6 +106,10 @@ public class Venta{
 		aa.getBilletes().put(1, b1);
 		aa.getBilletes().put(2, b2);
 		aa.getBilletes().put(3, b3);
+		
+		System.out.println(aa.getBilletes());
+		
+		
 		
 		
 
