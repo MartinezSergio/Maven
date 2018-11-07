@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import es.indra.aerolineas.beans.IAerolinea;
 import es.indra.aerolineas.beans.impl.Aerolinea;
+import es.indra.aerolineas.beans.impl.Billete;
 import es.indra.aerolineas.beans.impl.Empleado;
 import es.indra.aerolineas.beans.impl.Pasajero;
 import es.indra.aerolineas.beans.impl.Vuelo;
@@ -72,6 +73,22 @@ public class Venta{
 		
 		System.out.println("*************************************************************************");
 		
+		
+		Billete b1 = new Billete(10, vuelos[1], p, "07/11/2018", "18A");
+		Billete b2 = new Billete(11, vuelos[1], p, "08/11/2018", "22B");
+		Billete b3 = new Billete(12, vuelos[2], p, "07/11/2018", "30A");
+		Billete b4 = new Billete(13, vuelos[2], p, "09/11/2018", "48B");
+		Billete b5 = new Billete(14, vuelos[2], p, "07/11/2018", "59A");
+		System.out.println(b5.toString());
+		try {
+			aa.consultarVuelos("MAD");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		aa.getBilletes().put(1, b1);
+		aa.getBilletes().put(2, b2);
+		aa.getBilletes().put(3, b3);
 		
 		
 

@@ -4,7 +4,9 @@
 package es.indra.aerolineas.beans;
 
 import java.io.IOException;
+import java.util.Map;
 
+import es.indra.aerolineas.beans.impl.Billete;
 import es.indra.aerolineas.beans.impl.Vuelo;
 
 /**
@@ -26,4 +28,8 @@ public interface IAerolinea {
 
 	Vuelo[] getVuelos();	
 
-}
+	public Map<Integer, Billete> getBilletes();		
+	
+	public void setBilletes(Map<Integer, Billete> billetes);
+	}
+
