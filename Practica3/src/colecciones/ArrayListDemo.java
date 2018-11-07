@@ -21,7 +21,10 @@ public class ArrayListDemo {
 		List<Integer> listaGenerada = cargaArrayList();
 		
 		System.out.println(listaGenerada.size());
-		
+		for (Integer elemento: listaGenerada){
+			System.out.println("Elemento: " + elemento);
+		}
+		System.out.println(listaGenerada.get(0));
 		if (listaGenerada.contains(50)) {
 			System.out.println("Contiene el elemento 50");			
 		}
