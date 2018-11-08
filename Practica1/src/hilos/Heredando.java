@@ -1,5 +1,7 @@
 package hilos;
 
+import java.util.Set;
+
 public class Heredando extends Thread {
 
 	public void run() {
@@ -42,7 +44,23 @@ public class Heredando extends Thread {
 		h3.setName("Hilo 3");
 		h3.start();
 		
+		System.out.println("Hilos en ejecución: " + Heredando.activeCount());
 		
+		Set<Thread>hilos = Heredando.getAllStackTraces().keySet();
+		
+		for (Thread hilo : hilos) {
+			StringBuilder sb = new StringBuilder();
+			
+			sb.append("\"" + hilo.getName() + "\"");
+			sb.append(" : ");
+			sb.append(hilo.getPriority());
+			sb.append(", ");
+			sb.append(hilo.isDaemon());
+			sb.append(", ");
+			sb.append(hilo.getState());
+			
+			System.out.println("\t" + sb);
+		}
 	}
 
 }
