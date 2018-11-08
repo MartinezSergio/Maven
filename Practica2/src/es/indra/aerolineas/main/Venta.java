@@ -34,7 +34,8 @@ public class Venta{
 
 		Vuelo[] vuelos = creaVuelos();		
 		
-		IAerolinea aa = new Aerolinea(10, "American Airlines",vuelos);
+		//IAerolinea aa = new Aerolinea(10, "American Airlines",vuelos);
+		Aerolinea aa = new Aerolinea(10, "American Airlines",vuelos);
 		
 		try {
 			aa.consultarVuelos("MAD");
@@ -106,6 +107,8 @@ public class Venta{
 		aa.getBilletes().put(1, b1);
 		aa.getBilletes().put(2, b2);
 		aa.getBilletes().put(3, b3);
+		
+		aa.verBilletesPorFecha("07/11/2018");
 		
 		System.out.println(aa.getBilletes());
 		

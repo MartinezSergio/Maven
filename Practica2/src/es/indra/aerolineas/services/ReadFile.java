@@ -22,7 +22,8 @@ public class ReadFile {
 	public List<String> retornarVuelos() throws ErrorLecturaDeVuelosException{
 		
 		List<String> vuelos = new ArrayList<>();
-		Path path = Paths.get("/Users/aula4/repositorios/CursoJava/practicas-curso-java/vuelos.txt");
+		Path path = Paths.get("/Users/aula11/repositorios/practicas-curso-java/vuelos.txt");
+		
 				
 		try {
 			vuelos = Files.readAllLines(path);
