@@ -1,30 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListaDePares<K, V> implements Pair{
+	private K key;
+	private V value;
+	private List<K> kas = new ArrayList<>();
 
-		
+	/**
+	 * @param key
+	 * @param value
+	 */
+	public ListaDePares(K key, V value) {
+		super();
+		this.key = key;
+		this.value = value;
+	}
+	
+	@Override
+	public void setKey(K k) {
+		kas.add(key);
+	}
 
-		private K key;
-		private V value;
-		private List<K>;
+	@Override
+	public K getKey() {
+		
+		return key ;
+	}
 
-		public public ListaDePares() (K key, V value){
-			// TODO Auto-generated constructor stub
-		 
-			// TODO Auto-generated constructor stub
-			super();
-			this.key = key;
-			this.value = value;
-		}		
-		
-		public Object getKey() {
-		// TODO Auto-generated method stub
-		return key;
-		}
-		
-		@Override
-		public Object getValue() {
-		// TODO Auto-generatd method stub
+	@Override
+	public V getValue() {
 		return value;
-		}
+	}
+
 
 }
