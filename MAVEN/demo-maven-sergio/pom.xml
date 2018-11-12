@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>es.indra</groupId>
-  <artifactId>demo-maven</artifactId>
+  <artifactId>demo-maven-sergio</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>demo-maven</name>
+  <name>demo-maven-sergio</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -21,6 +21,7 @@
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.13</version>
 </dependency>
+
 
   </dependencies>
 </project>
