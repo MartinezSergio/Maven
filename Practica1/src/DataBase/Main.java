@@ -3,7 +3,9 @@ package DataBase;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Main {
 
@@ -30,8 +32,23 @@ public class Main {
 			preparedStmt.setInt(1, 10);
 			preparedStmt.setString(2, "Alimentacion");
 			preparedStmt.execute();
-			conn1.close();
+			//conn1.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		String query2 = "SELECT * FROM categorias";
+		Statement st;
+		try {
+			st = conn1.createStatement();
+			ResultSet rs = st.executeQuery(query2);
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String nombre = rs.getString("nombre");
+				System.out.format("%s, %s \n", id, nombre);
+			}
+			st.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
