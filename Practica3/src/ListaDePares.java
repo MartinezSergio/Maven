@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaDePares<K, V> implements Pair{
+public class ListaDePares<K, V> implements Pair<K, V> {
+	
 	private K key;
 	private V value;
 	private List<K> kas = new ArrayList<>();
@@ -31,6 +32,5 @@ public class ListaDePares<K, V> implements Pair{
 	public V getValue() {
 		return value;
 	}
-
 
 }
