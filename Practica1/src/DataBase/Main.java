@@ -32,7 +32,7 @@ public class Main {
 			preparedStmt.setInt(1, 10);
 			preparedStmt.setString(2, "Alimentacion");
 			preparedStmt.execute();
-			//conn1.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -47,6 +47,7 @@ public class Main {
 				System.out.format("%s, %s \n", id, nombre);
 			}
 			st.close();
+			conn1.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
