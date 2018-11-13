@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% session.setAttribute("usuario", null); %>
+	<%
+		session.setAttribute("usuario", null);
+	%>
 	<FORM NAME="FORM1" METHOD="POST" ACTION="ServletFormulario">
 		<p>
 			Usuario: <INPUT TYPE=text NAME="login" SIZE="25">
@@ -16,6 +18,16 @@
 			Contraseña: <INPUT TYPE=password NAME="contraseña" SIZE="25">
 		</p>
 		<INPUT TYPE=SUBMIT VALUE="Iniciar sesion">
+		<div>
+			<select name="idioma">
+				<option option selected value="0">IOOOO</option>
+				<option value="Español">Español</option>
+				<option value="Ingles">Ingles</option>
+				<option value="Frances">Frances</option>
+				<option value="Aleman">Aleman</option>
+			</select>
+		</div>
 	</FORM>
+
 </body>
 </html>
