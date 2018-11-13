@@ -5,14 +5,14 @@
 <head>
 <title>Ejemplo :: Mi primera página</title>
 </head>
-<header style="background-color: blue; color: white;">
-	<b>HEADER</b>
-</header>
+<%@include file = "header.jsp" %>
 <body>
 	<div>
 		<h1>Ejemplo 1 : Probando contenido</h1>
 		<p>Esto es una prueba</p>
+		<%@include file = "formulario.jsp" %>
 	</div>
 </body>
-<footer style="background-color: red;color: white;">FOOTER</footer>
+<%@include file = "footer.jsp" %>
+
 </html>
