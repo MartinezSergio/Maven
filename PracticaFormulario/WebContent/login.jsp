@@ -20,7 +20,7 @@
 		<INPUT TYPE=SUBMIT VALUE="Iniciar sesion">
 		<div>
 			<select name="idioma">
-				<option option selected value="0">IOOOO</option>
+				<option option selected value="0">Seleccione un idioma</option>
 				<option value="Español">Español</option>
 				<option value="Ingles">Ingles</option>
 				<option value="Frances">Frances</option>
