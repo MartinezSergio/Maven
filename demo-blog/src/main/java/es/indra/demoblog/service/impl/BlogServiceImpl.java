@@ -22,6 +22,7 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog getBlogById(int id) {
+
 		return this.blogRepository.getOne(id);
 	}
 
@@ -37,9 +38,11 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog updateBlog(Blog blog) {
-		blog.setId(50);
-		blog.setTitulo("asldhfihasdlkfhsa");
-		return blog;
+
+		blog.setId(blog.getId());
+		blog.setTitulo(blog.getTitulo());
+		blog.setContenido(blog.getContenido());
+		return this.blogRepository.save(blog);
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,15 +28,21 @@ public class BlogController {
 
 	@RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Blog> getToDoById(@PathVariable("id") int id) {
-		return new ResponseEntity<Blog>(blogService.getBlogById(id), HttpStatus.OK);
-	}
+		Blog b = this.blogService.getBlogById(id);
+		if (b == null) {
+			return new ResponseEntity<Blog>(b, HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Blog>(b, HttpStatus.OK);
+		}
 
-	@RequestMapping(value = "/blog", method = RequestMethod.POST)
-	public ResponseEntity<Void> crearBlog(@RequestBody Blog b) {
-		Blog blog = this.blogService.saveBlog(b);
-
-		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
+	/*
+	 * @RequestMapping(value = "/blog", method = RequestMethod.POST) public
+	 * ResponseEntity<Void> crearBlog(@RequestBody Blog b) { Blog blog =
+	 * this.blogService.saveBlog(b);
+	 * 
+	 * return new ResponseEntity<Void>(HttpStatus.CREATED); }
+	 */
 
 	@RequestMapping(value = "/blog", method = RequestMethod.POST)
 	public ResponseEntity<Blog> saveToDo(@RequestBody Blog blog) {
@@ -44,8 +51,16 @@ public class BlogController {
 
 	@RequestMapping(value = "/blog", method = RequestMethod.PUT)
 	public ResponseEntity<Blog> updateToDo(@RequestBody Blog blog) {
+		boolean correcto = true;
+		RequestEntity<Blog> respuesta;
 
-		return new ResponseEntity<Blog>(blogService.saveBlog(blog), HttpStatus.OK);
+		if (blog == null) {
+			correcto = false;
+			return new RequestEntity<Blog>(blogService.saveBlog(blog), HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Blog>(blogService.saveBlog(blog), HttpStatus.ACCEPTED);
+		}
+
 	}
 
 	@RequestMapping(value = "/blog/{id}", method = RequestMethod.DELETE)
