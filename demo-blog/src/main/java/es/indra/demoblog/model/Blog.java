@@ -10,7 +10,7 @@ public class Blog {
 	@Id
 	@GeneratedValue
 	
-	private long id;
+	private int id;
 	
 	private String titulo;
 	
@@ -21,18 +21,18 @@ public class Blog {
 	}	
 	
 
-	public Blog(long id, String titulo, String contenido) {
+	public Blog(int id, String titulo, String contenido) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.contenido = contenido;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
