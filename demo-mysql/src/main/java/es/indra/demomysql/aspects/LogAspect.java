@@ -19,7 +19,7 @@ public class LogAspect {
 
 	}
 
-	@Around("execution(* es.indra.demomysql.controller.*.*(..))")
+	@Around("@annotation(es.indra.demomysql.aspects.annotations.MedidorDeTiempo)")
 	public void tiempoEjecucion(ProceedingJoinPoint join) throws Throwable {
 		long inicio = System.currentTimeMillis();
 

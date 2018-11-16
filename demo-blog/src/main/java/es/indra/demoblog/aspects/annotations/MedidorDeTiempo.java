@@ -1,4 +1,4 @@
-package es.indra.demoblog.aspects;
+package es.indra.demoblog.aspects.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
