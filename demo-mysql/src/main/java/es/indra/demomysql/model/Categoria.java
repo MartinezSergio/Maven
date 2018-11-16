@@ -1,5 +1,6 @@
 package es.indra.demomysql.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ public class Categoria {
 
 	int id;
 
+	@Column(name = "categoria")
 	String nombre;
 
 	public Categoria() {
