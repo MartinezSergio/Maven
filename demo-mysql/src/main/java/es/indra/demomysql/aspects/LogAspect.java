@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Aspect
 @Configuration
 public class LogAspect {
-
+	/*
 	@Before("execution(* es.indra.demomysql.service.impl.*.*(..))")
 	public void antesDeLosMetodos(JoinPoint join) {
 		// Advice
@@ -30,5 +30,5 @@ public class LogAspect {
 		System.out.println("Tiempo de ejecicion: " + tiempo + "ms");
 
 	}
-
+*/
 }

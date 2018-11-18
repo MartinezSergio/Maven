@@ -56,7 +56,7 @@ public class MysqlController {
 
 		if (categoria == null) {
 			correcto = false;
-			return new RequestEntity<Categoria>(mysqlService.saveCategoria(categoria), HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Categoria>(mysqlService.saveCategoria(categoria), HttpStatus.NOT_FOUND);
 		} else {
 			return new ResponseEntity<Categoria>(mysqlService.saveCategoria(categoria), HttpStatus.ACCEPTED);
 		}
